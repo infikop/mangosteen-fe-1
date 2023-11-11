@@ -1,0 +1,33 @@
+.wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    //线型背景色
+    background-image: linear-gradient(to bottom, #ffdc13, #f1c212);
+
+    >header {
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 66px;
+        color: #f1ff54;
+
+        >img {
+            width: 88px;
+            height: 88px;
+        }
+    }
+
+    >main {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    >footer {
+        flex-shrink: 0;
+    }
+}
