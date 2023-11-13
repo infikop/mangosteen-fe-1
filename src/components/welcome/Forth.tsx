@@ -1,11 +1,41 @@
-import { defineComponent } from "vue";
-import s from "./First.module.scss";
+import s from "./WelcomeLayout.module.scss";
 import cloud from "../../assets/icons/cloud.svg";
 import { RouterLink } from "vue-router";
-export const Forth = defineComponent({
-  setup: (props, context) => {
-    return () => (
-      <div class={s.wrapper}>
+import { WelcomeLayout } from "./WelcomeLayout";
+export const Forth = () => (
+  <WelcomeLayout>
+    {{
+      icon: () => <img src={cloud} />,
+      title: () => (
+        <>
+          <h2>
+          云备份
+            <br />
+            再也不怕数据丢失
+          </h2>
+        </>
+      ),
+      buttons: () => (
+        <>
+          <RouterLink class={s.fake} to="/start">
+            跳过
+          </RouterLink>
+          <RouterLink class={s.next} to="/start">
+            完成
+          </RouterLink>
+          <RouterLink class={s.fake} to="/start">
+            跳过
+          </RouterLink>
+        </>
+      ),
+    }}
+  </WelcomeLayout>
+);
+
+Forth.displayName = "Forth"
+
+{
+  /* <div class={s.wrapper}>
         <div class={s.card}>
           <img src={cloud} />
           <h2 class= {s.slogan}>云备份<br />再也不怕数据丢失</h2>
@@ -15,7 +45,5 @@ export const Forth = defineComponent({
           <RouterLink class={s.next} to="/start">完成</RouterLink>
           <RouterLink class={s.fake} to="/start">跳过</RouterLink>
         </div>
-      </div>
-    );
-  },
-});
+      </div> */
+}
